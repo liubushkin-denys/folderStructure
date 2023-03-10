@@ -1,0 +1,31 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using TestTaskNoSSL.Data;
+using TestTaskNoSSL.Models;
+using System.Linq;
+using Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Manage.Internal;
+using System.Diagnostics;
+
+namespace TestTask_aspnet_mvc.Controllers
+{
+	public class DirsController : Controller
+	{
+		private readonly AppDbContext _context;
+
+		public DirsController(AppDbContext context)
+		{
+			_context = context;
+		}
+
+		public async Task<IActionResult> Index(int id = 1)
+		{
+			var instances = _context.Dirs.Where(d => d.ParentDirId == id);
+			var currentDir = _context.Dirs.FirstOrDefault(i => i.Id == id);
+			var currentDirName = currentDir.DirName;
+			ViewBag.currentDirName = currentDirName;
+			var parentId = (currentDir?.ParentDirId ?? null);
+			ViewBag.parentId = parentId;
+			return View(instances);
+		}
+	}
+}

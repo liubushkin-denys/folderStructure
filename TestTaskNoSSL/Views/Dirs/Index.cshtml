@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Dir>
+@*@model List<Dir>*@
+
+@{
+	ViewData["Title"] = "List of directories";
+}
+
+<div class="row">
+	<div class ="col-md-8 offset-md-2">
+		<h1>@ViewBag.currentDirName</h1>
+
+
+			@if (ViewBag.parentId != null)
+			{
+			<p>
+				<button style="padding: 0; border:none; background: none">@Html.ActionLink("..", "Index", "Dirs", new {id = ViewBag.parentId})</button>
+			</p>
+			}
+
+		@{bool goBackOneLevel = false;}
+
+				@foreach (var item in Model)
+				{
+				
+			
+			@if (item.ParentDirId != 1 && goBackOneLevel == false)
+			{
+				goBackOneLevel = true;
+			}
+			<p>
+				<a class="align-middle">
+					<button style="padding: 0; border:none; background: none">@Html.ActionLink(item.DirName, "Index", "Dirs", new {id = item.Id})</button>
+				</a>
+				</p>
+				}
+	</div>
+</div>
