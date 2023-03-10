@@ -1,10 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using TestTaskNoSSL.Data;
-using TestTaskNoSSL.Models;
-using System.Linq;
-using Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Manage.Internal;
-using System.Diagnostics;
 
 namespace TestTask_aspnet_mvc.Controllers
 {

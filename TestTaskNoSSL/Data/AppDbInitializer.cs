@@ -19,49 +19,41 @@ namespace TestTask_aspnet_mvc.Data
                     {
                         new Dir()
                         {
-                            //Id = 1,
                             DirName = "Creating Digital Images",
                             ParentDirId = null
                         },
                         new Dir()
                         {
-                            //Id = 2,
                             DirName = "Resources",
                             ParentDirId = 1
                         },
                         new Dir()
                         {
-                            //Id = 3,
                             DirName = "Evidence",
                             ParentDirId = 1
                         },
                         new Dir()
                         {
-                            //Id = 4,
                             DirName = "Graphic Products",
                             ParentDirId = 1
                         },
                         new Dir()
                         {
-                            //Id = 5,
                             DirName = "Primary Sources",
                             ParentDirId = 2
                         },
                         new Dir()
                         {
-                            //Id = 6,
                             DirName = "Secondary Sources",
                             ParentDirId = 2
                         },
                         new Dir()
                         {
-                            //Id = 7,
                             DirName = "Process",
                             ParentDirId = 4
                         },
                         new Dir()
                         {
-                            //Id = 8,
                             DirName = "Final Product",
                             ParentDirId = 4
                         }
